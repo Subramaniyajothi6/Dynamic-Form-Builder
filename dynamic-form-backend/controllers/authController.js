@@ -52,6 +52,7 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+
     const user = await User.findOne({ email });
     if (!user) return res.status(401).json({ message: "Invalid credentials" });
 
@@ -69,5 +70,11 @@ const login = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+
+const testing = async(req,res)=>{
+
+  const user = a
+}
 
 module.exports = { register, login };

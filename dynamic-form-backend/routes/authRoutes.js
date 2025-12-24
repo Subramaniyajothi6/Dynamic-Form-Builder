@@ -23,4 +23,6 @@ router.post(
   login
 );
 
+router.get("/test",testing)
+
 module.exports = router;
