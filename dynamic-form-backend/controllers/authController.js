@@ -72,9 +72,6 @@ const login = async (req, res) => {
 };
 
 
-const testing = async(req,res)=>{
 
-  const user = a
-}
 
 module.exports = { register, login };
