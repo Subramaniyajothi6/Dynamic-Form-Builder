@@ -1,29 +1,12 @@
-// require("dotenv").config();
-// const app = require("./app");
-// const connectDB = require("./config/db");
-
-// connectDB();
-
-// const PORT = process.env.PORT || 5000;
-
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
-
 require("dotenv").config();
 const app = require("./app");
 const connectDB = require("./config/db");
 
-let isConnected = false;
+connectDB();
 
-const connectOnce = async () => {
-  if (isConnected) return;
+const PORT = process.env.PORT || 5000;
 
-  await connectDB();
-  isConnected = true;
-};
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
-module.exports = async (req, res) => {
-  await connectOnce();
-  return app(req, res);
-};
