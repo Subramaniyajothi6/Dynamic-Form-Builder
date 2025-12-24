@@ -27,7 +27,7 @@ const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body || {};
+    const { name, email, password } = req.body || {};
 
     if (!email || !password) {
       return res.status(400).json({ message: "Email and password required" });
@@ -39,7 +39,7 @@ const register = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role
+      role: "user"
     });
 
     res.status(201).json({ message: "User registered" });
