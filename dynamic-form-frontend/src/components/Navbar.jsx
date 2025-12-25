@@ -20,12 +20,28 @@ const Navbar = () => {
         localStorage.removeItem("token");
         navigate("/login");
     };
+    const handleBrandClick = () => {
+        if (!token) {
+            navigate("/");
+            return;
+        }
+        if (role === "admin") {
+            navigate("/admin");
+        } else {
+            navigate("/"); // UserHome
+        }
+    };
 
     return (
         <nav className="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
-            <Link to="/" className="text-xl font-bold tracking-wide">
+            <button
+                type="button"
+                onClick={handleBrandClick}
+                className="text-xl font-bold tracking-wide"
+            >
                 Dynamic Forms
-            </Link>
+            </button>
+
 
             <div className="flex gap-6 items-center">
 

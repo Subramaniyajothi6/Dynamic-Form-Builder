@@ -25,7 +25,7 @@ const Login = () => {
       if (role === "admin") {
         navigate("/admin");
       } else {
-        navigate("/forms");
+        navigate("/");
       }
     } catch (err) {
       alert("Invalid credentials");
